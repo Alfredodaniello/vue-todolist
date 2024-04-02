@@ -25,6 +25,7 @@ const { createApp } = Vue
 createApp({
   data() {
     return {
+        newActivity: "",
       tasks: [
         {text: "Fare la spesa",
         done: false},
@@ -49,6 +50,12 @@ createApp({
     },
     removeActivity(index) {
         this.tasks.splice(index, 1)
-    }
-}, 
+    },
+    addNewActivity(){
+        this.tasks.push(
+            {text: this.newActivity, 
+            done:false});
+            this.newActivity = ""
+        }
+    }, 
 }).mount('#app')

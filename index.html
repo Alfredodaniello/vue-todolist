@@ -21,8 +21,9 @@
         </header>
         <main>
             <div class="input d-flex gap-3 mb-5 justify-content-center">
-                <input type="text" class="form-control" placeholder="Aggiungi una nuova attività!">
-                <button type="button" class="btn btn-outline-success">Aggiungi</button>
+                <input type="text" class="form-control" placeholder="Aggiungi una nuova attività!"
+                    v-model="newActivity">
+                <button type="button" class="btn btn-outline-success" @click="addNewActivity">Aggiungi</button>
             </div>
             <div v-for="activity, index in tasks" :class="doneOrNot(activity)"
                 class="activity mx-auto d-flex justify-content-between px-2 flex-wrap">
