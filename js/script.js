@@ -19,3 +19,33 @@ Bonus:
 1- oltre al click sul pulsante, intercettare anche il tasto ENTER per aggiungere il todo alla lista
 2- cliccando sul testo dell'item, invertire il valore della proprietà done del todo corrispondente (se done era uguale a false, impostare true e viceversa)
 */
+
+const { createApp } = Vue
+
+createApp({
+  data() {
+    return {
+      tasks: [
+        {text: "Fare la spesa",
+        done: false},
+        {text: "Fare la lavatrice",
+        done: true},
+        {text: "Stirare i panni",
+        done: false},
+        {text: "Cucinare",
+        done: true},
+        {text: "Lavare i piatti",
+        done: true}
+      ]
+    }
+  },
+  methods: {
+    doneOrNot(activity){
+        let lineTrough;
+        if (activity.done){
+            lineTrough = "text-decoration-line-through"
+        }
+        return lineTrough
+    }
+}, 
+}).mount('#app')
