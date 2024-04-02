@@ -46,6 +46,9 @@ createApp({
             lineTrough = "text-decoration-line-through"
         }
         return lineTrough
+    },
+    removeActivity(index) {
+        this.tasks.splice(index, 1)
     }
 }, 
 }).mount('#app')
